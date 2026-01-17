@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROADMAP.AI - Your Personal Goal Planner</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/chat.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div id="app" class="app-container">
+        
+        <!-- Navigation Header -->
+        <header class="header" id="mainHeader">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🗺️</div>
+                    <h1 class="logo-text">ROADMAP.AI</h1>
+                </div>
+                
+                <nav class="nav-menu">
+                    <a href="#features" class="nav-link">FEATURES</a>
+                    <a href="#how-it-works" class="nav-link">HOW IT WORKS</a>
+                    <a href="#examples" class="nav-link">EXAMPLES</a>
+                </nav>
+                
+                <div class="auth-buttons" id="authButtons">
+                    <button class="btn btn-outline" id="loginBtn">LOGIN</button>
+                    <button class="btn btn-primary" id="signupBtn">SIGNUP</button>
+                </div>
+                
+                <div class="user-section hidden" id="userSection">
+                    <div class="user-avatar">👤</div>
+                    <span class="user-email" id="userEmail"></span>
+                    <button class="btn btn-small" id="logoutBtn">LOGOUT</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">✨ STOP OVERTHINKING. START DOING.</div>
+                <h2 class="hero-title">
+                    BUILD YOUR PATH TO<br>
+                    <span class="hero-highlight">SUCCESS</span>
+                </h2>
+                <p class="hero-description">
+                    Transform any goal into an actionable roadmap. Whether you're learning guitar, 
+                    launching a startup, or mastering a new skill—we'll guide you step by step.
+                </p>
+                <button class="btn btn-hero hidden" id="createRoadmapBtn">
+                    <span class="btn-icon">🚀</span>
+                    CREATE YOUR ROADMAP
+                </button>
+                <div class="hero-cta" id="heroCTA">
+                    <p class="cta-text">Ready to start your journey?</p>
+                    <button class="btn btn-hero-alt" id="getStartedBtn">GET STARTED FREE</button>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Roadmaps Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">AI Support</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">🎸</div>
+                    <div class="card-text">Learn Guitar</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">💼</div>
+                    <div class="card-text">Start Business</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">💻</div>
+                    <div class="card-text">Code Master</div>
+                </div>
+                <div class="floating-card card-4">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-text">Digital Art</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <h3 class="section-title">WHY CHOOSE US?</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4 class="feature-title">LIGHTNING FAST</h4>
+                    <p class="feature-description">Get your personalized roadmap in seconds, not hours</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4 class="feature-title">LASER FOCUSED</h4>
+                    <p class="feature-description">Clear, actionable steps with no unnecessary fluff</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h4 class="feature-title">FULLY FLEXIBLE</h4>
+                    <p class="feature-description">Adapt and modify your roadmap as you progress</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h4 class="feature-title">AI POWERED</h4>
+                    <p class="feature-description">Smart guidance from Gemini, Google's AI assistant</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4 class="feature-title">TRACK PROGRESS</h4>
+                    <p class="feature-description">Monitor your journey with milestone tracking</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h4 class="feature-title">PROVEN RESULTS</h4>
+                    <p class="feature-description">Join thousands who've achieved their goals</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-section" id="how-it-works">
+            <h3 class="section-title">HOW IT WORKS</h3>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4 class="step-title">TELL US YOUR GOAL</h4>
+                        <p class="step-description">Share what you want to achieve—be specific or general</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4 class="step-title">AI CREATES ROADMAP</h4>
+                        <p class="step-description">Our AI analyzes and generates a custom plan for you</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4 class="step-title">START YOUR JOURNEY</h4>
+                        <p class="step-description">Follow the steps and watch your progress unfold</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section class="examples-section" id="examples">
+            <h3 class="section-title">POPULAR ROADMAPS</h3>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-header">🎸 Music</div>
+                    <h4 class="example-title">Learn Guitar in 6 Months</h4>
+                    <ul class="example-list">
+                        <li>Week 1-4: Basic chords & finger exercises</li>
+                        <li>Month 2-3: Rhythm & strumming patterns</li>
+                        <li>Month 4-6: Songs & advanced techniques</li>
+                    </ul>
+                </div>
+                <div class="example-card">
+                    <div class="example-header">💻 Tech</div>
+                    <h4 class="example-title">Become a Web Developer</h4>
+                    <ul class="example-list">
+                        <li>Month 1-2: HTML, CSS, JavaScript basics</li>
+                        <li>Month 3-4: React & backend fundamentals</li>
+                        <li>Month 5-6: Build portfolio projects</li>
+                    </ul>
+                </div>
+                <div class="example-card">
+                    <div class="example-header">🚀 Business</div>
+                    <h4 class="example-title">Launch Your Startup</h4>
+                    <ul class="example-list">
+                        <li>Week 1-2: Validate your idea & research</li>
+                        <li>Week 3-6: Build MVP & test with users</li>
+                        <li>Month 2-3: Scale & get first customers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Authentication Modal -->
+    <div class="modal-overlay hidden" id="authModal">
+        <div class="modal-container auth-modal">
+            <button class="modal-close" id="closeAuthModal">✕</button>
+            <div class="auth-content">
+                <h2 class="auth-title" id="authTitle">LOGIN</h2>
+                <p class="auth-subtitle" id="authSubtitle">Welcome back! Ready to continue your journey?</p>
+                
+                <div class="auth-form">
+                    <div class="form-group">
+                        <label class="form-label">EMAIL ADDRESS</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="authEmail" class="form-input" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">PASSWORD</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="authPassword" class="form-input" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-full" id="authSubmitBtn">LOGIN</button>
+                </div>
+                
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+                
+                <div class="auth-switch">
+                    <span id="authSwitchText">Don't have an account?</span>
+                    <button class="auth-link" id="authSwitchBtn">SIGNUP</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="modal-overlay hidden" id="chatModal">
+        <div class="modal-container chat-modal">
+            <div class="chat-header">
+                <div class="chat-header-left">
+                    <div class="chat-avatar">🤖</div>
+                    <div class="chat-header-info">
+                        <h3 class="chat-title">ROADMAP ASSISTANT</h3>
+                        <p class="chat-status">
+                            <span class="status-dot"></span>
+                            Online & Ready
+                        </p>
+                    </div>
+                </div>
+                <button class="modal-close" id="closeChatModal">✕</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">👋</div>
+                    <h4 class="welcome-title">Welcome! I'm your AI roadmap assistant.</h4>
+                    <p class="welcome-text">Tell me your goal and I'll create a personalized step-by-step plan to help you achieve it.</p>
+                    <div class="quick-prompts">
+                        <button class="quick-prompt">🎸 Learn guitar in 6 months</button>
+                        <button class="quick-prompt">💼 Launch a tech startup</button>
+                        <button class="quick-prompt">💻 Become a web developer</button>
+                        <button class="quick-prompt">🎨 Master digital illustration</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        class="chat-input" 
+                        placeholder="Describe your goal... (e.g., 'I want to learn Python programming')"
+                    >
+                    <button class="btn btn-send" id="sendMessageBtn">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+                <div class="chat-hint">Press Enter to send • AI-powered by Gemini</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Creating your roadmap...</p>
+
+
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+
+    <!-- App Scripts -->
+    <script src="js/firebase-config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/authentication.js"></script>
+    <script src="js/chat.js"></script>
+    <script src="js/app.js"></script>
+
+    <!-- Initialize Firebase when page loads -->
+    <script>
+        // Initialize Firebase when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeFirebase();
+        });
+    </script>
+</body>
+</html>

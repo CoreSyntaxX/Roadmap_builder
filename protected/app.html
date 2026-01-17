@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROADMAP.AI - Your Personal Goal Planner</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/auth.css">
+    <link rel="stylesheet" href="/styles/chat.css">
+    <link rel="stylesheet" href="/styles/animations.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div id="app" class="app-container">
+        
+        <!-- Navigation Header -->
+        <header class="header" id="mainHeader">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-icon">🗺️</div>
+                    <h1 class="logo-text">ROADMAP.AI</h1>
+                </div>
+                
+                <div class="user-section" id="userSection">
+                    <div class="user-avatar">👤</div>
+                    <span class="user-email" id="userEmail">Loading...</span>
+                    <button class="btn btn-small" id="logoutBtn">LOGOUT</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <div class="hero-badge">✨ STOP OVERTHINKING. START DOING.</div>
+                <h2 class="hero-title">
+                    BUILD YOUR PATH TO<br>
+                    <span class="hero-highlight">SUCCESS</span>
+                </h2>
+                <p class="hero-description">
+                    Transform any goal into an actionable roadmap. Whether you're learning guitar, 
+                    launching a startup, or mastering a new skill—we'll guide you step by step.
+                </p>
+                <button class="btn btn-hero" id="createRoadmapBtn">
+                    <span class="btn-icon">🚀</span>
+                    CREATE YOUR ROADMAP
+                </button>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Roadmaps Created</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">AI Support</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card card-1">
+                    <div class="card-icon">🎸</div>
+                    <div class="card-text">Learn Guitar</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">💼</div>
+                    <div class="card-text">Start Business</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">💻</div>
+                    <div class="card-text">Code Master</div>
+                </div>
+                <div class="floating-card card-4">
+                    <div class="card-icon">🎨</div>
+                    <div class="card-text">Digital Art</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section" id="features">
+            <h3 class="section-title">WHY CHOOSE US?</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h4 class="feature-title">LIGHTNING FAST</h4>
+                    <p class="feature-description">Get your personalized roadmap in seconds, not hours</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4 class="feature-title">LASER FOCUSED</h4>
+                    <p class="feature-description">Clear, actionable steps with no unnecessary fluff</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h4 class="feature-title">FULLY FLEXIBLE</h4>
+                    <p class="feature-description">Adapt and modify your roadmap as you progress</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h4 class="feature-title">AI POWERED</h4>
+                    <p class="feature-description">Smart guidance from Gemini, Google's AI assistant</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4 class="feature-title">TRACK PROGRESS</h4>
+                    <p class="feature-description">Monitor your journey with milestone tracking</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h4 class="feature-title">PROVEN RESULTS</h4>
+                    <p class="feature-description">Join thousands who've achieved their goals</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-section" id="how-it-works">
+            <h3 class="section-title">HOW IT WORKS</h3>
+            <div class="steps-container">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4 class="step-title">TELL US YOUR GOAL</h4>
+                        <p class="step-description">Share what you want to achieve—be specific or general</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4 class="step-title">AI CREATES ROADMAP</h4>
+                        <p class="step-description">Our AI analyzes and generates a custom plan for you</p>
+                    </div>
+                </div>
+                <div class="step-arrow">→</div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4 class="step-title">START YOUR JOURNEY</h4>
+                        <p class="step-description">Follow the steps and watch your progress unfold</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Examples Section -->
+        <section class="examples-section" id="examples">
+            <h3 class="section-title">POPULAR ROADMAPS</h3>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="example-header">🎸 Music</div>
+                    <h4 class="example-title">Learn Guitar in 6 Months</h4>
+                    <ul class="example-list">
+                        <li>Week 1-4: Basic chords & finger exercises</li>
+                        <li>Month 2-3: Rhythm & strumming patterns</li>
+                        <li>Month 4-6: Songs & advanced techniques</li>
+                    </ul>
+                </div>
+                <div class="example-card">
+                    <div class="example-header">💻 Tech</div>
+                    <h4 class="example-title">Become a Web Developer</h4>
+                    <ul class="example-list">
+                        <li>Month 1-2: HTML, CSS, JavaScript basics</li>
+                        <li>Month 3-4: React & backend fundamentals</li>
+                        <li>Month 5-6: Build portfolio projects</li>
+                    </ul>
+                </div>
+                <div class="example-card">
+                    <div class="example-header">🚀 Business</div>
+                    <h4 class="example-title">Launch Your Startup</h4>
+                    <ul class="example-list">
+                        <li>Week 1-2: Validate your idea & research</li>
+                        <li>Week 3-6: Build MVP & test with users</li>
+                        <li>Month 2-3: Scale & get first customers</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Chat Modal -->
+    <div class="modal-overlay hidden" id="chatModal">
+        <div class="modal-container chat-modal">
+            <div class="chat-header">
+                <div class="chat-header-left">
+                    <div class="chat-avatar">🤖</div>
+                    <div class="chat-header-info">
+                        <h3 class="chat-title">ROADMAP ASSISTANT</h3>
+                        <p class="chat-status">
+                            <span class="status-dot"></span>
+                            Online & Ready
+                        </p>
+                    </div>
+                </div>
+                <button class="modal-close" id="closeChatModal">✕</button>
+            </div>
+            
+            <div class="chat-messages" id="chatMessages">
+                <div class="welcome-message">
+                    <div class="welcome-icon">👋</div>
+                    <h4 class="welcome-title">Welcome! I'm your AI roadmap assistant.</h4>
+                    <p class="welcome-text">Tell me your goal and I'll create a personalized step-by-step plan to help you achieve it.</p>
+                    <div class="quick-prompts">
+                        <button class="quick-prompt">🎸 Learn guitar in 6 months</button>
+                        <button class="quick-prompt">💼 Launch a tech startup</button>
+                        <button class="quick-prompt">💻 Become a web developer</button>
+                        <button class="quick-prompt">🎨 Master digital illustration</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="chat-input-wrapper">
+                    <input 
+                        type="text" 
+                        id="chatInput" 
+                        class="chat-input" 
+                        placeholder="Describe your goal... (e.g., 'I want to learn Python programming')"
+                    >
+                    <button class="btn btn-send" id="sendMessageBtn">
+                        <span class="send-icon">➤</span>
+                    </button>
+                </div>
+                <div class="chat-hint">Press Enter to send • AI-powered by Gemini</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Indicator -->
+    <div class="loading-overlay hidden" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+        <p class="loading-text">Creating your roadmap...</p>
+    </div>
+
+    <!-- Create Roadmap Modal -->
+    <div class="modal-overlay hidden" id="roadmapModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 class="modal-title">✨ Create Your Roadmap</h3>
+                <button class="modal-close" id="closeRoadmapModal">✕</button>
+            </div>
+            <div class="modal-body">
+                <form id="roadmapForm">
+                    <div class="form-group">
+                        <label class="form-label">🎯 YOUR GOAL</label>
+                        <input type="text" id="roadmapTitleInput" class="form-input" placeholder="e.g., I want to learn Python programming in 6 months" required>
+                        <p class="form-hint">Describe what you want to achieve - be specific or general, AI will help!</p>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">📝 DETAILS (OPTIONAL)</label>
+                        <textarea id="roadmapDescriptionInput" class="form-input" rows="3" placeholder="Any specific requirements or preferences..."></textarea>
+                    </div>
+                    <div class="ai-options">
+                        <div class="ai-option">
+                            <input type="radio" id="aiGenerate" name="createMethod" value="ai" checked>
+                            <label for="aiGenerate">
+                                <span class="option-icon">🤖</span>
+                                <span class="option-text">
+                                    <strong>✨ Generate with AI</strong>
+                                    <small>AI creates a personalized roadmap for you</small>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="ai-option">
+                            <input type="radio" id="aiManual" name="createMethod" value="manual">
+                            <label for="aiManual">
+                                <span class="option-icon">📝</span>
+                                <span class="option-text">
+                                    <strong>Create Manually</strong>
+                                    <small>Build your roadmap step by step</small>
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="modal-actions">
+                        <button type="button" class="btn btn-secondary" onclick="hideAndResetModal()">Cancel</button>
+                        <button type="submit" class="btn btn-primary btn-generate" id="saveRoadmapBtn">
+                            <span class="btn-icon">🚀</span>
+                            Generate Roadmap
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <style>
+    .form-hint {
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.7);
+        margin-top: 0.5rem;
+        font-style: italic;
+    }
+    
+    .ai-options {
+        margin: 1.5rem 0;
+    }
+    
+    .ai-option {
+        margin-bottom: 1rem;
+    }
+    
+    .ai-option input[type="radio"] {
+        display: none;
+    }
+    
+    .ai-option label {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem;
+        background: rgba(255,255,255,0.1);
+        border: 2px solid transparent;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .ai-option input[type="radio"]:checked + label {
+        background: rgba(74, 222, 128, 0.2);
+        border-color: #4ADE80;
+    }
+    
+    .ai-option label:hover {
+        background: rgba(255,255,255,0.15);
+    }
+    
+    .option-icon {
+        font-size: 2rem;
+    }
+    
+    .option-text {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .option-text strong {
+        font-size: 1rem;
+    }
+    
+    .option-text small {
+        color: rgba(255,255,255,0.7);
+        font-size: 0.85rem;
+    }
+    
+    .btn-generate {
+        background: linear-gradient(135deg, #4ADE80, #22C55E) !important;
+        color: #1a1a2e !important;
+        font-weight: bold !important;
+    }
+    
+    .btn-generate:hover {
+        background: linear-gradient(135deg, #22C55E, #16A34A) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(74, 222, 128, 0.4);
+    }
+    </style>
+    
+    <script>
+    // Additional modal functionality - using safe function references
+    function hideAndResetModal() {
+        const modal = document.getElementById('roadmapModal');
+        if (modal) {
+            modal.classList.add('hidden');
+        }
+        
+        // Reset form
+        const form = document.getElementById('roadmapForm');
+        if (form) {
+            form.reset();
+        }
+        
+        // Reset to default radio button
+        const aiGenerate = document.getElementById('aiGenerate');
+        if (aiGenerate) {
+            aiGenerate.checked = true;
+        }
+        
+        // Reset button - safely without referencing external function
+        const saveBtn = document.getElementById('saveRoadmapBtn');
+        if (saveBtn) {
+            saveBtn.innerHTML = '<span class="btn-icon">🚀</span>Generate Roadmap';
+        }
+    }
+
+    // Handle form submission
+    document.getElementById('roadmapForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const goal = document.getElementById('roadmapTitleInput').value.trim();
+        const description = document.getElementById('roadmapDescriptionInput').value.trim();
+        const createMethod = document.querySelector('input[name="createMethod"]:checked')?.value || 'ai';
+        
+        if (!goal) {
+            alert('Please describe your goal');
+            return false;
+        }
+        
+        // Hide modal
+        hideAndResetModal();
+        
+        // Show loading
+        const overlay = document.getElementById('loadingOverlay');
+        if (overlay) {
+            const loadingText = overlay.querySelector('.loading-text');
+            if (loadingText) {
+                loadingText.textContent = '🤖 AI is creating your personalized roadmap...';
+            }
+            overlay.classList.remove('hidden');
+        }
+        
+        try {
+            if (createMethod === 'ai') {
+                // Generate with AI
+                console.log('🤖 Starting AI roadmap generation for:', goal);
+                
+                // Call the global function from gemini-service.js
+                if (typeof generateRoadmapWithAI === 'function') {
+                    const roadmap = await generateRoadmapWithAI(goal, {
+                        maxSteps: 10,
+                        includeDuration: true,
+                        includeResources: true
+                    });
+                    
+                    console.log('✅ Roadmap generated, now saving to Firestore...');
+                    
+                    // Save to Firestore
+                    if (typeof createRoadmap === 'function') {
+                        const savedRoadmap = await createRoadmap({
+                            title: roadmap.title,
+                            description: roadmap.description,
+                            nodes: roadmap.nodes,
+                            edges: roadmap.edges,
+                            isPublic: false
+                        });
+                        
+                        // Hide loading
+                        if (overlay) {
+                            overlay.classList.add('hidden');
+                        }
+                        
+                        alert('🎉 Your AI-generated roadmap is ready!\n\n"' + savedRoadmap.title + '" has been saved to your roadmaps.');
+                        
+                        // Reload to show the new roadmap
+                        location.reload();
+                        
+                        return true;
+                    } else {
+                        throw new Error('Firestore service not available');
+                    }
+                } else {
+                    throw new Error('AI service not available. Please make sure gemini-service.js is loaded.');
+                }
+            } else {
+                // Create manually
+                console.log('📝 Creating manual roadmap for:', goal);
+                
+                if (typeof createNewRoadmap === 'function') {
+                    const savedRoadmap = await createNewRoadmap(goal, description);
+
+                    // Hide loading
+                    if (overlay) {
+                        overlay.classList.add('hidden');
+                    }
+
+                    alert('✅ Roadmap created!\n\n"' + savedRoadmap.title + '" has been saved.');
+
+                    // Reload to show the new roadmap
+                    location.reload();
+
+                    return true;
+                } else {
+                    console.error('createNewRoadmap function not found');
+                    throw new Error('Roadmap service not available - createNewRoadmap function not found');
+                }
+            }
+        } catch (error) {
+            console.error('❌ Error creating roadmap:', error);
+            
+            // Hide loading
+            if (overlay) {
+                overlay.classList.add('hidden');
+            }
+            
+            alert('❌ Failed to create roadmap: ' + error.message + '\n\nPlease try again or check the console for details.');
+            return false;
+        }
+    });
+
+    // Handle radio button changes
+    document.querySelectorAll('input[name="createMethod"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            const saveBtn = document.getElementById('saveRoadmapBtn');
+            if (this.value === 'ai') {
+                saveBtn.innerHTML = '<span class="btn-icon">🚀</span>Generate Roadmap';
+            } else {
+                saveBtn.innerHTML = '<span class="btn-icon">✏️</span>Create Roadmap';
+            }
+        });
+    });
+
+    // Close modal handlers
+    document.getElementById('closeRoadmapModal').addEventListener('click', function() {
+        hideAndResetModal();
+    });
+
+    // Close modal on overlay click
+    document.getElementById('roadmapModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            hideAndResetModal();
+        }
+    });
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            hideAndResetModal();
+        }
+    });
+    </script>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script>
+        // Load Firebase config from server
+        async function loadFirebaseConfig() {
+            try {
+                const response = await fetch('/api/firebase-config');
+                if (!response.ok) {
+                    throw new Error('Failed to load Firebase config');
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('❌ Failed to load Firebase config:', error);
+                // Fallback for development
+                return {
+                    apiKey: "PLACEHOLDER_API_KEY",
+                    authDomain: "placeholder.firebaseapp.com",
+                    projectId: "placeholder-project",
+                    storageBucket: "placeholder.firebasestorage.app",
+                    messagingSenderId: "123456789",
+                    appId: "1:123456789:web:placeholder"
+                };
+            }
+        }
+
+        // Initialize Firebase
+        let app, auth, db;
+        (async function initFirebase() {
+            try {
+                const firebaseConfig = await loadFirebaseConfig();
+                app = firebase.initializeApp(firebaseConfig);
+                auth = firebase.auth();
+                if (firebase.firestore) {
+                    db = firebase.firestore();
+                    db.settings({ timestampsInSnapshots: true });
+                    console.log('🔥 Firebase & Firestore initialized');
+                }
+            } catch (e) {
+                console.error('Firebase init error:', e);
+            }
+        })();
+    </script>
+
+    <!-- App Scripts (PROTECTED - Only loaded for authenticated users) -->
+    <script src="/js/firebase-config.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/authentication.js"></script>
+    <script src="/js/firestore-service.js"></script>
+    <script src="/js/gemini-service.js"></script>
+    <script src="/js/chat.js"></script>
+    <script src="/js/app.js"></script>
+    
+    <script>
+        // Debug logging
+        console.log('🔍 Checking authentication...');
+        
+        // Check authentication on load
+        async function checkAuth() {
+            try {
+                const response = await fetch('/api/auth-status', { credentials: 'same-origin' });
+                const data = await response.json();
+                
+                if (!data.authenticated) {
+                    console.log('❌ User not authenticated, redirecting to login');
+                    window.location.href = '/login';
+                    return false;
+                }
+                
+                console.log('✅ User authenticated:', data.user?.email);
+                
+                // Update UI with user info
+                if (data.user && data.user.email) {
+                    const userEmailEl = document.getElementById('userEmail');
+                    if (userEmailEl) {
+                        userEmailEl.textContent = data.user.email;
+                    }
+                    if (typeof AppState !== 'undefined') {
+                        AppState.isLoggedIn = true;
+                        AppState.userEmail = data.user.email;
+                    }
+                }
+                
+                return true;
+            } catch (error) {
+                console.error('❌ Auth check failed:', error);
+                // Don't redirect on network errors, just log
+                return false;
+            }
+        }
+
+        // Logout handler - only add if element exists
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', async () => {
+                console.log('👋 Logout clicked');
+                try {
+            await fetch('/api/logout', { method: 'POST', credentials: 'same-origin' });
+                } catch (e) {
+                    console.error('Logout error:', e);
+                }
+                window.location.href = '/';
+            });
+        }
+
+        // Create roadmap button handler - direct inline handler for reliability
+        const createRoadmapBtn = document.getElementById('createRoadmapBtn');
+        if (createRoadmapBtn) {
+            createRoadmapBtn.addEventListener('click', function(e) {
+                console.log('🚀 Create roadmap button clicked!');
+                e.preventDefault();
+                
+                // Show the modal
+                const modal = document.getElementById('roadmapModal');
+                if (modal) {
+                    console.log('✅ Showing roadmap modal');
+                    modal.classList.remove('hidden');
+                    
+                    // Focus on the input
+                    setTimeout(() => {
+                        const input = document.getElementById('roadmapTitleInput');
+                        if (input) {
+                            input.focus();
+                            input.placeholder = 'Describe your goal (e.g., "I want to learn Python programming")';
+                        }
+                    }, 100);
+                } else {
+                    console.error('❌ Roadmap modal not found');
+                }
+            });
+        }
+
+        // Initialize app after DOM is ready
+        function initializeApp() {
+            checkAuth().then((isAuthenticated) => {
+                console.log('🔄 Auth check complete, isAuthenticated:', isAuthenticated);
+                
+                // Only initialize if authenticated
+                if (isAuthenticated) {
+                    // Check if initializeRoadmapApp exists
+                    if (typeof initializeRoadmapApp === 'function') {
+                        console.log('🚀 Initializing roadmap app...');
+                        initializeRoadmapApp();
+                    } else {
+                        console.warn('⚠️ initializeRoadmapApp function not found');
+                        // Try to initialize after a short delay
+                        setTimeout(() => {
+                            if (typeof initializeRoadmapApp === 'function') {
+                                console.log('🚀 Initializing roadmap app (delayed)...');
+                                initializeRoadmapApp();
+                            } else {
+                                console.error('❌ initializeRoadmapApp still not found after delay');
+                            }
+                        }, 500);
+                    }
+                } else {
+                    console.log('⚠️ User not authenticated, app not initialized');
+                }
+            });
+        }
+
+        // Run initialization
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeApp);
+        } else {
+            // DOM already loaded
+            initializeApp();
+        }
+    </script>
+</body>
+</html>
+

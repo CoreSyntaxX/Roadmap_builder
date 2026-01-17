@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ROADMAP.AI</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/auth.css">
+</head>
+<body>
+    <div class="auth-page">
+        <div class="auth-container">
+            <a href="/" class="auth-logo">
+                <div class="logo-icon">🗺️</div>
+                <span>ROADMAP.AI</span>
+            </a>
+            
+            <div class="auth-card">
+                <h2 class="auth-title">CREATE ACCOUNT</h2>
+                <p class="auth-subtitle">Start your journey today!</p>
+                
+                <form id="signupForm" class="auth-form">
+                    <div class="form-group">
+                        <label class="form-label">EMAIL ADDRESS</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📧</span>
+                            <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">PASSWORD</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="password" class="form-input" placeholder="••••••••" required minlength="6">
+                        </div>
+                        <small style="color: var(--gray); font-size: 0.75rem;">At least 6 characters</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">CONFIRM PASSWORD</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="confirmPassword" class="form-input" placeholder="••••••••" required>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-full" id="signupBtn">CREATE ACCOUNT</button>
+                </form>
+                
+                <div class="auth-divider">
+                    <span>OR</span>
+                </div>
+                
+                <button class="btn btn-google btn-full" id="googleSignupBtn">
+                    <span>🔵</span> Continue with Google
+                </button>
+                
+                <div class="auth-switch">
+                    <span>Already have an account?</span>
+                    <a href="/login" class="auth-link">LOGIN</a>
+                </div>
+                
+                <a href="/" class="auth-back">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+    
+    <script>
+        // Load Firebase config from server
+        async function loadFirebaseConfig() {
+            try {
+                const response = await fetch('/api/firebase-config');
+                if (!response.ok) {
+                    throw new Error('Failed to load Firebase config');
+                }
+                return await response.json();
+            } catch (error) {
+                console.error('❌ Failed to load Firebase config:', error);
+                // Fallback for development
+                return {
+                    apiKey: "PLACEHOLDER_API_KEY",
+                    authDomain: "placeholder.firebaseapp.com",
+                    projectId: "placeholder-project",
+                    storageBucket: "placeholder.firebasestorage.app",
+                    messagingSenderId: "123456789",
+                    appId: "1:123456789:web:placeholder"
+                };
+            }
+        }
+
+        // Initialize Firebase
+        let app, auth;
+        (async function initFirebase() {
+            try {
+                const firebaseConfig = await loadFirebaseConfig();
+                app = firebase.initializeApp(firebaseConfig);
+                auth = firebase.auth();
+                console.log('Firebase initialized successfully');
+            } catch (e) {
+                console.error('Firebase initialization error:', e);
+            }
+        })();
+
+        // Signup form handler
+        document.getElementById('signupForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const btn = document.getElementById('signupBtn');
+            
+            if (password !== confirmPassword) {
+                alert('Passwords do not match');
+                return;
+            }
+            
+            btn.textContent = 'CREATING ACCOUNT...';
+            btn.disabled = true;
+
+            try {
+                const result = await auth.createUserWithEmailAndPassword(email, password);
+                const idToken = await result.user.getIdToken();
+                
+                // Send token to server to create session
+                await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ idToken, email })
+                });
+                
+                window.location.href = '/app';
+            } catch (error) {
+                console.error('Signup error:', error);
+                alert('Signup failed: ' + error.message);
+                btn.textContent = 'CREATE ACCOUNT';
+                btn.disabled = false;
+            }
+        });
+
+        // Google Signup
+        document.getElementById('googleSignupBtn').addEventListener('click', async () => {
+            const btn = document.getElementById('googleSignupBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<span>🔵</span> CONNECTING...';
+
+            try {
+                const provider = new firebase.auth.GoogleAuthProvider();
+                const result = await auth.signInWithPopup(provider);
+                const idToken = await result.user.getIdToken();
+                
+                await fetch('/api/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ idToken, email: result.user.email })
+                });
+                
+                window.location.href = '/app';
+            } catch (error) {
+                console.error('Google signup error:', error);
+                alert('Google signup failed: ' + error.message);
+                btn.disabled = false;
+                btn.innerHTML = '<span>🔵</span> Continue with Google';
+            }
+        });
+    </script>
+</body>
+</html>
+
